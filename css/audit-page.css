@@ -1,0 +1,646 @@
+/* AUDIT PAGE SPECIFIC STYLES */
+
+/* CLOSE MENU BUTTON */
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-menu:hover {
+    color: var(--sand-primary);
+    transform: rotate(90deg);
+}
+
+/* AUDIT HERO SECTION */
+.audit-hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    padding: 140px 0 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.audit-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(181, 149, 106, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.audit-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.audit-hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--sand-light);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--sand-primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* WHAT IS AUDIT SECTION */
+.what-is-audit {
+    padding: 120px 0;
+    background: var(--dark-secondary);
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%231a1a1a"/><rect x="100" y="200" width="60" height="80" fill="%23ffffff" opacity="0.02"/><rect x="800" y="400" width="80" height="40" fill="%23ffffff" opacity="0.01"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.what-is-audit h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.audit-explanation {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.explanation-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.audit-visual {
+    text-align: center;
+    background: rgba(181, 149, 106, 0.05);
+    padding: 3rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+}
+
+.audit-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.audit-visual h3 {
+    color: var(--sand-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* WHY AUDIT SECTION */
+.why-audit {
+    padding: 120px 0;
+    background: var(--dark-primary);
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%230a0a0a"/><rect x="200" y="150" width="70" height="50" fill="%23ffffff" opacity="0.015"/><rect x="600" y="500" width="50" height="90" fill="%23ffffff" opacity="0.02"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.why-audit h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.audit-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.benefit-card {
+    background: rgba(181, 149, 106, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    border-left: 4px solid var(--sand-primary);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(181, 149, 106, 0.08);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    color: var(--sand-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* WHAT WE CHECK SECTION */
+.what-we-check {
+    padding: 120px 0;
+    background: var(--dark-tertiary);
+    background-image: 
+        linear-gradient(rgba(42, 42, 42, 0.95), rgba(26, 26, 26, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%232a2a2a"/><rect x="300" y="200" width="80" height="60" fill="%23ffffff" opacity="0.02"/><rect x="700" y="600" width="60" height="70" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.what-we-check h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.audit-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.category-card {
+    background: rgba(181, 149, 106, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background: rgba(181, 149, 106, 0.08);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid rgba(181, 149, 106, 0.1);
+}
+
+.category-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.category-header h3 {
+    color: var(--sand-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.category-list {
+    list-style: none;
+    padding: 1.5rem 2rem 2rem;
+}
+
+.category-list li {
+    color: var(--text-light);
+    opacity: 0.9;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.category-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sand-primary);
+    font-weight: bold;
+}
+
+/* AUDIT PROCESS SECTION */
+.audit-process {
+    padding: 120px 0;
+    background: var(--dark-primary);
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%230a0a0a"/><rect x="150" y="300" width="50" height="100" fill="%23ffffff" opacity="0.02"/><rect x="900" y="200" width="90" height="50" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.audit-process h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 auto 1.5rem;
+}
+
+.step-content h3 {
+    color: var(--sand-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: var(--text-light);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* EXAMPLE RESULTS SECTION */
+.example-results {
+    padding: 120px 0;
+    background: var(--dark-secondary);
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%231a1a1a"/><rect x="400" y="100" width="60" height="80" fill="%23ffffff" opacity="0.02"/><rect x="100" y="500" width="80" height="50" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.example-results h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.result-card {
+    background: rgba(181, 149, 106, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    background: rgba(181, 149, 106, 0.08);
+}
+
+.result-header {
+    margin-bottom: 2rem;
+}
+
+.result-header h3 {
+    color: var(--sand-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-domain {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.result-metrics {
+    margin-bottom: 2rem;
+}
+
+.metric {
+    margin-bottom: 1.5rem;
+}
+
+.metric-label {
+    display: block;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.metric-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.8rem;
+    position: relative;
+}
+
+.metric-before {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+}
+
+.metric-after {
+    color: var(--sand-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.result-impact {
+    color: var(--text-light);
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(181, 149, 106, 0.1);
+    border-left: 3px solid var(--sand-primary);
+}
+
+/* AUDIT FORM SECTION */
+.audit-form-section {
+    padding: 120px 0;
+    background: var(--dark-tertiary);
+    text-align: center;
+    background-image: 
+        linear-gradient(rgba(42, 42, 42, 0.95), rgba(26, 26, 26, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%232a2a2a"/><rect x="200" y="300" width="70" height="40" fill="%23ffffff" opacity="0.02"/><rect x="800" y="150" width="50" height="80" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.audit-form-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.form-subtitle {
+    color: var(--sand-light);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(181, 149, 106, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 3rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    box-shadow: 0 15px 35px var(--shadow-heavy);
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(181, 149, 106, 0.3);
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--sand-primary);
+    box-shadow: 0 0 0 3px rgba(181, 149, 106, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.checkbox-group {
+    margin-bottom: 2rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--sand-primary) 0%, var(--accent-hover) 100%);
+    color: var(--dark-primary);
+    padding: 18px 40px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    width: 100%;
+    text-transform: none;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px var(--shadow-heavy);
+    filter: brightness(1.1);
+}
+
+.form-privacy {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form-privacy a {
+    color: var(--sand-primary);
+    text-decoration: none;
+}
+
+.form-privacy a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .audit-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .audit-explanation {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .audit-benefits,
+    .audit-categories,
+    .process-steps,
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .what-is-audit h2,
+    .why-audit h2,
+    .what-we-check h2,
+    .audit-process h2,
+    .example-results h2,
+    .audit-form-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .audit-hero {
+        padding: 120px 0 80px;
+    }
+    
+    .audit-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .benefit-card,
+    .category-card,
+    .result-card {
+        padding: 2rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .what-is-audit,
+    .why-audit,
+    .what-we-check,
+    .audit-process,
+    .example-results,
+    .audit-form-section {
+        padding: 80px 0;
+    }
+}

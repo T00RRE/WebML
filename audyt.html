@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audyt Strony Internetowej - MLWeb</title>
+    <meta name="description" content="Darmowy audyt strony internetowej. Sprawdzimy PageSpeed, SEO, błędy W3C i responsywność. Profesjonalna analiza w 24h.">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/audit-page.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                    <img src="Test-img/WebML-Logo.png" width="140px" alt="MLWeb - Szybkie strony internetowe">
+                </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <span class="lang active" data-lang="pl">Pl</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang" data-lang="en">En</span>
+                </div>
+                <span class="menu-text">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav-overlay">
+                <button class="close-menu" aria-label="Zamknij menu">✕</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="#audit">Audyt</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="audit-hero">
+        <div class="container">
+            <div class="audit-hero-content">
+                <h1>Darmowy Audyt Strony Internetowej</h1>
+                <p class="hero-subtitle">Sprawdzimy twoją stronę w 24h i pokażemy co można poprawić</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">95+</span>
+                        <span class="stat-label">PageSpeed Score</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Czas analizy</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Darmowy</span>
+                    </div>
+                </div>
+                <a href="#audit-form" class="cta-button">Zamów darmowy audyt</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS AUDIT SECTION -->
+    <section class="what-is-audit">
+        <div class="container">
+            <h2>Czym jest audyt strony internetowej?</h2>
+            <div class="audit-explanation">
+                <div class="explanation-text">
+                    <p>Audyt strony internetowej to kompleksowa analiza techniczna i użytkowa twojej witryny. Sprawdzamy wszystkie aspekty, które wpływają na pozycję w Google, prędkość ładowania i doświadczenie użytkowników.</p>
+                    
+                    <p>Nasz audyt to nie tylko lista problemów - to <strong>konkretny plan działania</strong> z priorytetami i rekomendacjami, jak poprawić wydajność strony.</p>
+                </div>
+                
+                <div class="audit-visual">
+                    <div class="audit-icon">🔍</div>
+                    <h3>Analiza 360°</h3>
+                    <p>Sprawdzamy każdy element wpływający na sukces strony</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY AUDIT SECTION -->
+    <section class="why-audit">
+        <div class="container">
+            <h2>Dlaczego audyt jest kluczowy dla twojego biznesu?</h2>
+            
+            <div class="audit-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📉</div>
+                    <h3>Tracisz klientów każdego dnia</h3>
+                    <p><strong>53% użytkowników</strong> opuszcza stronę, która ładuje się dłużej niż 3 sekundy. Wolna strona = utracone zyski.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Google "karze" wolne strony</h3>
+                    <p>PageSpeed to oficjalny ranking factor. Wolne strony są niżej w wynikach wyszukiwania - <strong>mniej ruchu = mniej klientów</strong>.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Mobile First Index</h3>
+                    <p><strong>60% ruchu</strong> to urządzenia mobilne. Jeśli strona nie działa na telefonie, tracisz większość potencjalnych klientów.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>ROI z każdej poprawy</h3>
+                    <p>Każda sekunda przyspieszenia strony = <strong>7% więcej konwersji</strong>. Inwestycja w prędkość zwraca się wielokrotnie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE CHECK SECTION -->
+    <section class="what-we-check">
+        <div class="container">
+            <h2>Co sprawdzamy w audycie?</h2>
+            
+            <div class="audit-categories">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">⚡</div>
+                        <h3>PageSpeed & Core Web Vitals</h3>
+                    </div>
+                    <ul class="category-list">
+                        <li>Czas ładowania strony (LCP)</li>
+                        <li>Interaktywność (FID)</li>
+                        <li>Stabilność layoutu (CLS)</li>
+                        <li>Optymalizacja obrazów</li>
+                        <li>Kompresja plików CSS/JS</li>
+                        <li>Buforowanie przeglądarki</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">🔧</div>
+                        <h3>Błędy Techniczne</h3>
+                    </div>
+                    <ul class="category-list">
+                        <li>Walidacja W3C HTML/CSS</li>
+                        <li>Błędy JavaScript w konsoli</li>
+                        <li>Linki 404 (broken links)</li>
+                        <li>Problemy z SSL/HTTPS</li>
+                        <li>Meta tagi i struktura</li>
+                        <li>Sitemap XML</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">📱</div>
+                        <h3>Responsywność Mobile</h3>
+                    </div>
+                    <ul class="category-list">
+                        <li>Test na różnych urządzeniach</li>
+                        <li>Touch-friendly elementy</li>
+                        <li>Czytelność tekstu na mobile</li>
+                        <li>Viewport configuration</li>
+                        <li>Przycisków i formularzy</li>
+                        <li>Szybkość na mobile</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">🎯</div>
+                        <h3>SEO & Dostępność</h3>
+                    </div>
+                    <ul class="category-list">
+                        <li>Title tags i meta descriptions</li>
+                        <li>Nagłówki H1, H2, H3</li>
+                        <li>Alt text w obrazkach</li>
+                        <li>Schema markup</li>
+                        <li>Open Graph dla social media</li>
+                        <li>Accessibility (WCAG)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIT PROCESS SECTION -->
+    <section class="audit-process">
+        <div class="container">
+            <h2>Jak przebiega audyt?</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Wypełniasz formularz</h3>
+                        <p>Podajesz URL strony i podstawowe informacje o branży</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Analiza automatyczna</h3>
+                        <p>Używamy narzędzi Google PageSpeed, GTmetrix, Lighthouse</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Analiza manualna</h3>
+                        <p>Ekspert sprawdza stronę na różnych urządzeniach i przeglądarkach</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Raport z rekomendacjami</h3>
+                        <p>Otrzymujesz szczegółowy PDF z priorytetami i planem działania</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE RESULTS SECTION -->
+    <section class="example-results">
+        <div class="container">
+            <h2>Przykładowe wyniki naszych audytów</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>Hotel Górski</h3>
+                        <span class="result-domain">hotel-gorski.pl</span>
+                    </div>
+                    
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-label">PageSpeed</span>
+                            <div class="metric-bar">
+                                <div class="metric-before">Przed: 34</div>
+                                <div class="metric-after">Po: 96</div>
+                            </div>
+                        </div>
+                        
+                        <div class="metric">
+                            <span class="metric-label">Czas ładowania</span>
+                            <div class="metric-bar">
+                                <div class="metric-before">Przed: 8.2s</div>
+                                <div class="metric-after">Po: 1.1s</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-impact">
+                        <strong>Rezultat:</strong> +45% więcej rezerwacji w pierwszy miesiąc
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>Sklep Meblowy</h3>
+                        <span class="result-domain">meble-design.pl</span>
+                    </div>
+                    
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <span class="metric-label">PageSpeed</span>
+                            <div class="metric-bar">
+                                <div class="metric-before">Przed: 28</div>
+                                <div class="metric-after">Po: 94</div>
+                            </div>
+                        </div>
+                        
+                        <div class="metric">
+                            <span class="metric-label">Mobile Score</span>
+                            <div class="metric-bar">
+                                <div class="metric-before">Przed: 22</div>
+                                <div class="metric-after">Po: 91</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-impact">
+                        <strong>Rezultat:</strong> +78% ruchu z urządzeń mobilnych
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIT FORM SECTION -->
+    <section class="audit-form-section" id="audit-form">
+        <div class="container">
+            <h2>Zamów darmowy audyt już dziś</h2>
+            <p class="form-subtitle">Otrzymasz szczegółowy raport w 24h - bez zobowiązań</p>
+            
+            <div class="form-container">
+                <form id="audit-form-main">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="url">URL strony *</label>
+                            <input type="url" id="url" name="url" placeholder="https://twoja-strona.pl" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="twoj@email.pl" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Nazwa firmy</label>
+                            <input type="text" id="company" name="company" placeholder="Twoja firma">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Branża</label>
+                        <select id="industry" name="industry">
+                            <option value="">Wybierz branżę</option>
+                            <option value="hotel">Hotel/Noclegi</option>
+                            <option value="restauracja">Restauracja</option>
+                            <option value="budowlana">Budowlana</option>
+                            <option value="uslugi">Usługi</option>
+                            <option value="handel">E-commerce/Handel</option>
+                            <option value="medycyna">Medycyna/Zdrowie</option>
+                            <option value="prawne">Usługi prawne</option>
+                            <option value="finanse">Finanse/Księgowość</option>
+                            <option value="inne">Inne</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals">Główne cele strony (opcjonalne)</label>
+                        <textarea id="goals" name="goals" placeholder="Np. zwiększenie sprzedaży online, więcej zapytań, lepsza pozycja w Google..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="1">
+                            <span class="checkmark"></span>
+                            Chcę otrzymywać tips o optymalizacji stron (max 1 email/miesiąc)
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Wyślij na audyt - 100% darmowy</button>
+                    
+                    <p class="form-privacy">
+                        Wysyłając formularz akceptujesz <a href="#privacy">politykę prywatności</a>. 
+                        Twoje dane są bezpieczne - używamy ich tylko do audytu.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MLWeb</h3>
+                    <p>Szybkie strony dla firm w Małopolsce</p>
+                    <p>PageSpeed 95+ gwarantowany</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>📧 kontakt@mlweb.pl</p>
+                    <p>📱 +48 123 456 789</p>
+                    <p>📍 Małopolska, Polska</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Usługi</h3>
+                    <p><a href="audyt.html">Darmowy audyt</a></p>
+                    <p><a href="index.html#services">Landing page</a></p>
+                    <p><a href="index.html#services">Strona firmowa</a></p>
+                    <p><a href="index.html#services">Hotel + zdjęcia</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <p><a href="#">LinkedIn</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Instagram</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MLWeb. Wszystkie prawa zastrzeżone.</p>
+                <p><a href="#privacy">Polityka prywatności</a> | <a href="#terms">Regulamin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
