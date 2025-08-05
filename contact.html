@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - MLWeb | Szybkie Strony Internetowe</title>
+    <meta name="description" content="Skontaktuj się z MLWeb. Darmowa konsultacja, szybka wycena. Telefon, email, formularz kontaktowy. Małopolska, Polska.">
+    <link rel="stylesheet" href="css/contact-page.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe">
+            </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <span class="lang active" data-lang="pl">Pl</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang" data-lang="en">En</span>
+                </div>
+                <span class="menu-text">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav-overlay">
+                <button class="close-menu" aria-label="Zamknij menu">✕</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="uslugi.html">Usługi</a></li>
+                    <li><a href="audyt.html">Audyt</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Skontaktuj się z nami</h1>
+                <p class="hero-subtitle">Darmowa konsultacja i wycena w 24h</p>
+                <div class="contact-methods">
+                    <a href="tel:+48123456789" class="contact-method">
+                        <span class="method-icon">📱</span>
+                        <span>+48 123 456 789</span>
+                    </a>
+                    <a href="mailto:kontakt@mlweb.pl" class="contact-method">
+                        <span class="method-icon">📧</span>
+                        <span>kontakt@mlweb.pl</span>
+                    </a>
+                    <div class="contact-method">
+                        <span class="method-icon">📍</span>
+                        <span>Małopolska, Polska</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO SECTION -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>Informacje kontaktowe</h2>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="card-icon">📱</div>
+                            <h3>Telefon</h3>
+                            <p>Zadzwoń - odpowiadamy od poniedziałku do piątku</p>
+                            <a href="tel:+48123456789" class="contact-link">+48 123 456 789</a>
+                            <span class="hours">9:00 - 17:00</span>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">📧</div>
+                            <h3>Email</h3>
+                            <p>Napisz - odpowiadamy w ciągu 2h w dni robocze</p>
+                            <a href="mailto:kontakt@mlweb.pl" class="contact-link">kontakt@mlweb.pl</a>
+                            <span class="hours">Całodobowo</span>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">💬</div>
+                            <h3>Messenger</h3>
+                            <p>Szybki kontakt przez social media</p>
+                            <a href="#" class="contact-link">Facebook Messenger</a>
+                            <span class="hours">9:00 - 17:00</span>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">📍</div>
+                            <h3>Lokalizacja</h3>
+                            <p>Obsługujemy całą Małopolskę, spotkania online</p>
+                            <span class="contact-link">Małopolska, Polska</span>
+                            <span class="hours">Zdalnie lub u klienta</span>
+                        </div>
+                    </div>
+                    
+                    <div class="response-times">
+                        <h3>Czasy odpowiedzi</h3>
+                        <div class="response-grid">
+                            <div class="response-item">
+                                <span class="response-method">📧 Email</span>
+                                <span class="response-time">2h</span>
+                            </div>
+                            <div class="response-item">
+                                <span class="response-method">📱 Telefon</span>
+                                <span class="response-time">Natychmiast</span>
+                            </div>
+                            <div class="response-item">
+                                <span class="response-method">📝 Formularz</span>
+                                <span class="response-time">4h</span>
+                            </div>
+                            <div class="response-item">
+                                <span class="response-method">💼 Wycena</span>
+                                <span class="response-time">24h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-forms">
+                    <h2>Wybierz typ kontaktu</h2>
+                    
+                    <div class="form-tabs">
+                        <button class="form-tab active" data-form="general">Ogólne pytanie</button>
+                        <button class="form-tab" data-form="project">Nowy projekt</button>
+                        <button class="form-tab" data-form="audit">Audyt strony</button>
+                    </div>
+
+                    <!-- GENERAL CONTACT FORM -->
+                    <form id="general-form" class="contact-form active" data-form-type="general">
+                        <h3>Ogólne pytanie</h3>
+                        <p class="form-desc">Masz pytanie? Napisz do nas - odpowiemy szybko!</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gen-name">Imię *</label>
+                                <input type="text" id="gen-name" name="name" placeholder="Jak masz na imię?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gen-email">Email *</label>
+                                <input type="email" id="gen-email" name="email" placeholder="twoj@email.pl" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gen-subject">Temat</label>
+                            <select id="gen-subject" name="subject">
+                                <option value="">Wybierz temat</option>
+                                <option value="pricing">Pytanie o cennik</option>
+                                <option value="technical">Kwestie techniczne</option>
+                                <option value="timeline">Czas realizacji</option>
+                                <option value="support">Wsparcie techniczne</option>
+                                <option value="other">Inne</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gen-message">Wiadomość *</label>
+                            <textarea id="gen-message" name="message" placeholder="O czym chciałbyś porozmawiać?" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gen-phone">Telefon (opcjonalnie)</label>
+                            <input type="tel" id="gen-phone" name="phone" placeholder="+48 123 456 789">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Wyślij wiadomość</button>
+                    </form>
+
+                    <!-- PROJECT FORM -->
+                    <form id="project-form" class="contact-form" data-form-type="project">
+                        <h3>Nowy projekt</h3>
+                        <p class="form-desc">Opowiedz o swoim projekcie - przygotujemy wycenę!</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="proj-name">Imię i nazwisko *</label>
+                                <input type="text" id="proj-name" name="name" placeholder="Jan Kowalski" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="proj-company">Firma/Organizacja</label>
+                                <input type="text" id="proj-company" name="company" placeholder="Nazwa firmy">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="proj-email">Email *</label>
+                                <input type="email" id="proj-email" name="email" placeholder="kontakt@firma.pl" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="proj-phone">Telefon *</label>
+                                <input type="tel" id="proj-phone" name="phone" placeholder="+48 123 456 789" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-type">Typ projektu *</label>
+                            <select id="proj-type" name="project_type" required>
+                                <option value="">Wybierz typ projektu</option>
+                                <option value="landing">Landing Page (600 zł)</option>
+                                <option value="multilingual">Strona wielojęzyczna (1500 zł+)</option>
+                                <option value="comprehensive">Kompleksowa witryna (3000 zł+)</option>
+                                <option value="ecommerce">Sklep internetowy</option>
+                                <option value="other">Inne - opisz w wiadomości</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-budget">Budżet</label>
+                            <select id="proj-budget" name="budget">
+                                <option value="">Wybierz budżet</option>
+                                <option value="500-1000">500 - 1 000 zł</option>
+                                <option value="1000-3000">1 000 - 3 000 zł</option>
+                                <option value="3000-5000">3 000 - 5 000 zł</option>
+                                <option value="5000-10000">5 000 - 10 000 zł</option>
+                                <option value="10000+">10 000 zł+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-timeline">Kiedy potrzebujesz stronę?</label>
+                            <select id="proj-timeline" name="timeline">
+                                <option value="">Wybierz termin</option>
+                                <option value="asap">Jak najszybciej</option>
+                                <option value="1-week">W ciągu tygodnia</option>
+                                <option value="2-weeks">W ciągu 2 tygodni</option>
+                                <option value="1-month">W ciągu miesiąca</option>
+                                <option value="flexible">Termin elastyczny</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-description">Opis projektu *</label>
+                            <textarea id="proj-description" name="description" placeholder="Opisz swój projekt: jaka to branża, co ma zawierać strona, jakie funkcje są potrzebne..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-current-site">Obecna strona (jeśli istnieje)</label>
+                            <input type="url" id="proj-current-site" name="current_site" placeholder="https://twoja-obecna-strona.pl">
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consultation" value="1">
+                                <span class="checkmark"></span>
+                                Chcę umówić bezpłatną konsultację przez telefon
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Wyślij zapytanie o projekt</button>
+                    </form>
+
+                    <!-- AUDIT FORM -->
+                    <form id="audit-form" class="contact-form" data-form-type="audit">
+                        <h3>Darmowy audyt strony</h3>
+                        <p class="form-desc">Sprawdzimy twoją stronę i prishemy raport w 24h!</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="audit-name">Imię *</label>
+                                <input type="text" id="audit-name" name="name" placeholder="Twoje imię" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="audit-email">Email *</label>
+                                <input type="email" id="audit-email" name="email" placeholder="email@domena.pl" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="audit-url">URL strony do audytu *</label>
+                            <input type="url" id="audit-url" name="website_url" placeholder="https://twoja-strona.pl" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="audit-industry">Branża</label>
+                                <select id="audit-industry" name="industry">
+                                    <option value="">Wybierz branżę</option>
+                                    <option value="hotel">Hotel/Noclegi</option>
+                                    <option value="restaurant">Restauracja</option>
+                                    <option value="construction">Budowlana</option>
+                                    <option value="services">Usługi</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="healthcare">Medycyna</option>
+                                    <option value="legal">Prawnicza</option>
+                                    <option value="finance">Finanse</option>
+                                    <option value="other">Inne</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="audit-phone">Telefon (opcjonalnie)</label>
+                                <input type="tel" id="audit-phone" name="phone" placeholder="+48 123 456 789">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="audit-goals">Główne cele strony (opcjonalnie)</label>
+                            <textarea id="audit-goals" name="goals" placeholder="Np. więcej klientów, lepsza pozycja w Google, szybsze ładowanie..." rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="audit-issues">Znane problemy ze stroną (opcjonalnie)</label>
+                            <textarea id="audit-issues" name="issues" placeholder="Np. wolno się ładuje, nie działa na telefonie, mało ruchu..." rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="1">
+                                <span class="checkmark"></span>
+                                Zapisz mnie na newsletter z tips o optymalizacji (max 1 email/miesiąc)
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Zamów darmowy audyt</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Często zadawane pytania</h2>
+            <div class="faq-grid">
+                <div class="faq-category">
+                    <h3>💰 Cennik i płatności</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Czy ceny są stałe?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Tak, nasze ceny są transparentne. Landing Page 600 zł, strony wielojęzyczne od 1500 zł, kompleksowe od 3000 zł. Bez ukrytych kosztów.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Jakie formy płatności akceptujecie?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Przelew bankowy, BLIK, PayPal. 50% zaliczki przed rozpoczęciem, 50% po ukończeniu projektu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3>⏱️ Czas realizacji</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Jak długo trwa realizacja?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Landing Page: 5-7 dni, strony wielojęzyczne: 10-14 dni, kompleksowe witryny: 2-4 tygodnie. Zależy od złożoności projektu.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Czy można przyspieszyć realizację?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Tak, oferujemy tryb express za dodatkową opłatą. Landing page można zrobić w 2-3 dni.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3>🛠️ Wsparcie techniczne</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Czy oferujecie wsparcie po realizacji?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Tak! 1-3 miesiące darmowego wsparcia (zależnie od pakietu). Później 200 zł/miesiąc za pełne wsparcie techniczne.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Co zawiera wsparcie techniczne?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Aktualizacje zabezpieczeń, backup, monitoring, drobne zmiany treści, pomoc techniczna email/telefon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3>🌐 Strony wielojęzyczne</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Jak wygląda współpraca z Aktru?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Aktru to nasz partner w tłumaczeniach. Mają native speakerów w 25 językach. My zajmujemy się stroną techniczną, oni - tłumaczeniami.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Czy mogę wybrać konkretne języki?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Oczywiście! Nie musisz brać wszystkich 25 języków. Każdy dodatkowy język to +150 zł do ceny bazowej.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Gotowy na rozmowę?</h2>
+                <p>Skontaktuj się z nami już dziś. Darmowa konsultacja, konkretna wycena, szybka realizacja.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+48123456789" class="cta-button primary">
+                        <span class="btn-icon">📱</span>
+                        Zadzwoń teraz
+                    </a>
+                    <a href="mailto:kontakt@mlweb.pl" class="cta-button secondary">
+                        <span class="btn-icon">📧</span>
+                        Napisz email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MLWeb</h3>
+                    <p>Szybkie strony dla firm w Małopolsce</p>
+                    <p>PageSpeed 95+ gwarantowany</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>📧 kontakt@mlweb.pl</p>
+                    <p>📱 +48 123 456 789</p>
+                    <p>📍 Małopolska, Polska</p>
+                    <p>🕒 Pn-Pt: 9:00-17:00</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Usługi</h3>
+                    <p><a href="uslugi.html#landing-page">Landing Page</a></p>
+                    <p><a href="uslugi.html#multilingual">Strony wielojęzyczne</a></p>
+                    <p><a href="uslugi.html#comprehensive">Kompleksowe witryny</a></p>
+                    <p><a href="audyt.html">Darmowy audyt</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Pomoc</h3>
+                    <p><a href="#faq">FAQ</a></p>
+                    <p><a href="#privacy">Polityka prywatności</a></p>
+                    <p><a href="#terms">Regulamin</a></p>
+                    <p><a href="#support">Wsparcie techniczne</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MLWeb. Wszystkie prawa zastrzeżone.</p>
+                <p><a href="#privacy">Polityka prywatności</a> | <a href="#terms">Regulamin</a> | <a href="#cookies">Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact-page.js"></script>
+</body>
+</html>
