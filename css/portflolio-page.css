@@ -1,0 +1,574 @@
+/* PORTFOLIO PAGE SPECIFIC STYLES */
+
+/* PORTFOLIO HERO */
+.portfolio-hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    padding: 140px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(181, 149, 106, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--sand-light);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    background: rgba(181, 149, 106, 0.1);
+    padding: 1.5rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    min-width: 120px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--sand-primary);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+/* PORTFOLIO FILTERS */
+.portfolio-filters {
+    padding: 80px 0 40px;
+    background: var(--dark-secondary);
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%231a1a1a"/><rect x="100" y="300" width="60" height="40" fill="%23ffffff" opacity="0.02"/><rect x="800" y="150" width="80" height="60" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.portfolio-filters h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(181, 149, 106, 0.1);
+    color: var(--text-light);
+    border: 2px solid rgba(181, 149, 106, 0.3);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+    border-color: var(--sand-primary);
+    transform: translateY(-2px);
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section {
+    padding: 80px 0 120px;
+    background: var(--dark-primary);
+    background-image: 
+        linear-gradient(rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%230a0a0a"/><rect x="200" y="100" width="50" height="100" fill="%23ffffff" opacity="0.02"/><rect x="700" y="400" width="80" height="50" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+/* PORTFOLIO ITEMS - MAIN HOVER EFFECT */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    background: rgba(181, 149, 106, 0.05);
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-heavy);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+/* PORTFOLIO OVERLAY - SHOWS ON HOVER */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(10, 10, 10, 0.95) 0%, 
+        rgba(26, 26, 26, 0.9) 50%, 
+        rgba(42, 42, 42, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    padding: 2rem;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-info {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 100%;
+}
+
+.portfolio-info h3 {
+    color: var(--sand-primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.portfolio-category {
+    color: var(--sand-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.portfolio-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.metric {
+    background: rgba(181, 149, 106, 0.2);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--sand-primary);
+    border: 1px solid rgba(181, 149, 106, 0.3);
+    font-weight: 600;
+}
+
+.portfolio-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    max-height: 4.8rem;
+    overflow: hidden;
+}
+
+.portfolio-tech {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.portfolio-link {
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-link:not(.secondary) {
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+}
+
+.portfolio-link.secondary {
+    background: transparent;
+    color: var(--sand-primary);
+    border: 1px solid var(--sand-primary);
+}
+
+.portfolio-link:hover {
+    transform: translateY(-2px);
+}
+
+.portfolio-link.secondary:hover {
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+    padding: 120px 0;
+    background: var(--dark-secondary);
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%231a1a1a"/><rect x="300" y="200" width="70" height="50" fill="%23ffffff" opacity="0.02"/><rect x="600" y="500" width="50" height="80" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.testimonial-card {
+    background: rgba(181, 149, 106, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border: 1px solid rgba(181, 149, 106, 0.2);
+    border-left: 4px solid var(--sand-primary);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(181, 149, 106, 0.08);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+}
+
+.testimonial-content {
+    margin-bottom: 2rem;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--sand-primary);
+}
+
+.author-info h4 {
+    color: var(--sand-primary);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.author-info span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.testimonial-rating {
+    font-size: 1.2rem;
+}
+
+/* PORTFOLIO CTA */
+.portfolio-cta {
+    padding: 100px 0;
+    background: var(--dark-tertiary);
+    text-align: center;
+    background-image: 
+        linear-gradient(rgba(42, 42, 42, 0.95), rgba(26, 26, 26, 0.95)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%232a2a2a"/><rect x="200" y="300" width="80" height="60" fill="%23ffffff" opacity="0.02"/><rect x="700" y="150" width="60" height="100" fill="%23ffffff" opacity="0.015"/></svg>');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: var(--sand-light);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cta-button {
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, var(--sand-primary) 0%, var(--accent-hover) 100%);
+    color: var(--dark-primary);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--sand-primary);
+    border: 2px solid var(--sand-primary);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px var(--shadow-heavy);
+}
+
+.cta-button.secondary:hover {
+    background: var(--sand-primary);
+    color: var(--dark-primary);
+}
+
+/* FILTER ANIMATIONS */
+.portfolio-item.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .portfolio-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .stat {
+        min-width: 100px;
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+        height: 250px;
+    }
+    
+    .portfolio-overlay {
+        padding: 1.5rem;
+    }
+    
+    .portfolio-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .portfolio-metrics {
+        gap: 0.5rem;
+    }
+    
+    .portfolio-description {
+        max-height: 3.6rem;
+    }
+    
+    .portfolio-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .portfolio-link {
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .portfolio-filters h2 {
+        font-size: 2rem;
+    }
+    
+    .testimonials-section h2,
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .portfolio-item {
+        height: 220px;
+    }
+    
+    .portfolio-overlay {
+        padding: 1rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem;
+    }
+    
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+    }
+}

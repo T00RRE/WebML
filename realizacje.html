@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizacje - Portfolio MLWeb | Szybkie Strony Internetowe</title>
+    <meta name="description" content="Portfolio MLWeb - nasze realizacje stron internetowych. PageSpeed 95+, responsywne design, case studies z Małopolski.">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/portflolio-page.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.png" alt="MLWeb - Szybkie strony internetowe">
+            </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <span class="lang active" data-lang="pl">Pl</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang" data-lang="en">En</span>
+                </div>
+                <span class="menu-text">Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav-overlay">
+                <button class="close-menu" aria-label="Zamknij menu">✕</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="uslugi.html">Usługi</a></li>
+                    <li><a href="audyt.html">Audyt</a></li>
+                    <li><a href="#portfolio">Realizacje</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nasze Realizacje</h1>
+                <p class="hero-subtitle">Projektujemy i tworzymy szybkie strony internetowe dla firm w Małopolsce</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projektów</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95+</span>
+                        <span class="stat-label">Avg PageSpeed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Zadowolenie</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER SECTION -->
+    <section class="portfolio-filters">
+        <div class="container">
+            <h2>Filtry projektów</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                <button class="filter-btn" data-filter="hotel">Hotele</button>
+                <button class="filter-btn" data-filter="business">Firmy</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="landing">Landing Pages</button>
+                <button class="filter-btn" data-filter="multilingual">Wielojęzyczne</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                
+                <!-- HOTEL GÓRSKI -->
+                <div class="portfolio-item" data-category="hotel">
+                    <div class="portfolio-image">
+                        <img src="portfolio-hotel-gorski.jpg" alt="Hotel Górski - strona internetowa">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Hotel Górski</h3>
+                                <p class="portfolio-category">Hotel & Noclegi</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 96/100</span>
+                                    <span class="metric">Mobile: 94/100</span>
+                                    <span class="metric">Loading: 1.2s</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Kompleksowa strona dla hotelu w Zakopanem z systemem rezerwacji. 
+                                    Responsywny design z galeriami zdjęć pokoi i atrakcji. 
+                                    Po wdrożeniu wzrost rezerwacji o 45% w pierwszy miesiąc.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESTAURACJA PIZZA MAMA -->
+                <div class="portfolio-item" data-category="business">
+                    <div class="portfolio-image">
+                        <img src="portfolio-pizza-mama.jpg" alt="Restauracja Pizza Mama">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Pizza Mama</h3>
+                                <p class="portfolio-category">Restauracja</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 98/100</span>
+                                    <span class="metric">Mobile: 96/100</span>
+                                    <span class="metric">Loading: 0.9s</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Landing page dla pizzerii z online menu i zamówieniami. 
+                                    Integracja z systemem POS, płatności BLIK i karta. 
+                                    Wzrost zamówień online o 120% w pierwszym kwartale.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">PayU</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AKTRU COOPERATION -->
+                <div class="portfolio-item" data-category="multilingual business">
+                    <div class="portfolio-image">
+                        <img src="portfolio-aktru-coop.jpg" alt="Współpraca z Aktru - strony wielojęzyczne">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Aktru Partnership</h3>
+                                <p class="portfolio-category">Strony Wielojęzyczne</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">Languages: 12</span>
+                                    <span class="metric">PageSpeed: 95/100</span>
+                                    <span class="metric">Countries: 8</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Seria projektów realizowanych wspólnie z firmą Aktru. 
+                                    Strony w 12 językach dla firm ekspandujących zagranicę. 
+                                    Native tłumaczenia + technical implementation.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Multi-lang</span>
+                                    <span class="tech-tag">i18n</span>
+                                    <span class="tech-tag">SEO</span>
+                                    <span class="tech-tag">Translations</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz projekty</a>
+                                    <a href="#" class="portfolio-link secondary">Współpraca</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEBLE DESIGN SKLEP -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <img src="portfolio-meble-design.jpg" alt="Sklep Meble Design">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Meble Design</h3>
+                                <p class="portfolio-category">E-commerce</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 94/100</span>
+                                    <span class="metric">Products: 500+</span>
+                                    <span class="metric">Conversion: +78%</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Sklep internetowy z meblami na wymiar. 
+                                    Advanced product configurator, płatności online, 
+                                    integracja z magazynem. Wzrost sprzedaży o 200%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">WooCommerce</span>
+                                    <span class="tech-tag">PayU</span>
+                                    <span class="tech-tag">InPost</span>
+                                    <span class="tech-tag">ERP</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz sklep</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RUSZTOWANIA MAX -->
+                <div class="portfolio-item" data-category="business landing">
+                    <div class="portfolio-image">
+                        <img src="portfolio-rusztowania-max.jpg" alt="Rusztowania MAX">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Rusztowania MAX</h3>
+                                <p class="portfolio-category">Firma Budowlana</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 99/100</span>
+                                    <span class="metric">Mobile: 98/100</span>
+                                    <span class="metric">Loading: 0.8s</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Landing page B2B dla producenta rusztowań. 
+                                    Formularz wyceny online, galeria realizacji, 
+                                    certyfikaty. Wzrost zapytań o 150%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Landing Page</span>
+                                    <span class="tech-tag">B2B</span>
+                                    <span class="tech-tag">Forms</span>
+                                    <span class="tech-tag">SEO</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KLINIKA ZDROWIA -->
+                <div class="portfolio-item" data-category="business">
+                    <div class="portfolio-image">
+                        <img src="portfolio-klinika-zdrowia.jpg" alt="Klinika Zdrowia">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Klinika Zdrowia</h3>
+                                <p class="portfolio-category">Medycyna</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 97/100</span>
+                                    <span class="metric">GDPR: 100%</span>
+                                    <span class="metric">Appointments: +60%</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Strona dla prywatnej kliniki z systemem umawiania wizyt. 
+                                    GDPR compliance, integracja z kalendarzem lekarzy, 
+                                    telemedycyna. Wzrost pacjentów o 60%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Medical</span>
+                                    <span class="tech-tag">GDPR</span>
+                                    <span class="tech-tag">Calendar</span>
+                                    <span class="tech-tag">Security</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAXI KRAKÓW -->
+                <div class="portfolio-item" data-category="business landing">
+                    <div class="portfolio-image">
+                        <img src="portfolio-taxi-krakow.jpg" alt="Taxi Kraków">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Taxi Kraków</h3>
+                                <p class="portfolio-category">Transport</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 96/100</span>
+                                    <span class="metric">Mobile: 95/100</span>
+                                    <span class="metric">Calls: +80%</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Landing page dla firmy taxi z aplikacją do zamawiania. 
+                                    Geolokalizacja, tracking przejazdu, płatności online. 
+                                    Wzrost zamówień przez stronę o 80%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Mobile App</span>
+                                    <span class="tech-tag">GPS</span>
+                                    <span class="tech-tag">Payments</span>
+                                    <span class="tech-tag">API</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEDDING PLANNER -->
+                <div class="portfolio-item" data-category="business">
+                    <div class="portfolio-image">
+                        <img src="portfolio-wedding-planner.jpg" alt="Wedding Planner">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Dream Weddings</h3>
+                                <p class="portfolio-category">Event Planning</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 95/100</span>
+                                    <span class="metric">Gallery: 200+</span>
+                                    <span class="metric">Bookings: +90%</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Elegancka strona dla wedding plannera z portfolio ślubów. 
+                                    Advanced photo gallery, booking system, 
+                                    vendor directory. Wzrost klientów o 90%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Gallery</span>
+                                    <span class="tech-tag">Booking</span>
+                                    <span class="tech-tag">CMS</span>
+                                    <span class="tech-tag">Social</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FITNESS KLUB -->
+                <div class="portfolio-item" data-category="business">
+                    <div class="portfolio-image">
+                        <img src="portfolio-fitness-klub.jpg" alt="Fitness Klub">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Power Gym</h3>
+                                <p class="portfolio-category">Fitness & Sport</p>
+                                <div class="portfolio-metrics">
+                                    <span class="metric">PageSpeed: 94/100</span>
+                                    <span class="metric">Members: 300+</span>
+                                    <span class="metric">Signups: +70%</span>
+                                </div>
+                                <p class="portfolio-description">
+                                    Nowoczesna strona dla siłowni z systemem zapisów na zajęcia. 
+                                    Member portal, class schedule, trainer profiles. 
+                                    Wzrost nowych członków o 70%.
+                                </p>
+                                <div class="portfolio-tech">
+                                    <span class="tech-tag">Member Portal</span>
+                                    <span class="tech-tag">Scheduling</span>
+                                    <span class="tech-tag">Payments</span>
+                                    <span class="tech-tag">Mobile</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Co mówią nasi klienci</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Strona dla naszego hotelu przekroczyła oczekiwania. PageSpeed 96 i wzrost rezerwacji o 45% w pierwszy miesiąc!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="client-hotel-gorski.jpg" alt="Marcin Kowalski">
+                        <div class="author-info">
+                            <h4>Marcin Kowalski</h4>
+                            <span>Właściciel, Hotel Górski</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Współpraca z MLWeb przy projektach wielojęzycznych to czysta przyjemność. Profesjonalizm na najwyższym poziomie."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="client-aktru.jpg" alt="Anna Nowak">
+                        <div class="author-info">
+                            <h4>Anna Nowak</h4>
+                            <span>Project Manager, Aktru</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Sklep internetowy działa perfekcyjnie. Szybko, stabilnie i przynosi realne zyski. Polecam!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="client-meble-design.jpg" alt="Tomasz Wiśniewski">
+                        <div class="author-info">
+                            <h4>Tomasz Wiśniewski</h4>
+                            <span>CEO, Meble Design</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Gotowy na podobny sukces?</h2>
+                <p>Stwórzmy razem stronę, która przyciągnie klientów i zwiększy Twoje zyski</p>
+                <div class="cta-buttons">
+                    <a href="kontakt.html" class="cta-button primary">Porozmawiajmy o projekcie</a>
+                    <a href="audyt.html" class="cta-button secondary">Najpierw audyt</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MLWeb</h3>
+                    <p>Szybkie strony dla firm w Małopolsce</p>
+                    <p>PageSpeed 95+ gwarantowany</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>📧 kontakt@mlweb.pl</p>
+                    <p>📱 +48 123 456 789</p>
+                    <p>📍 Małopolska, Polska</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Usługi</h3>
+                    <p><a href="uslugi.html#landing-page">Landing Page</a></p>
+                    <p><a href="uslugi.html#multilingual">Strony wielojęzyczne</a></p>
+                    <p><a href="uslugi.html#comprehensive">Kompleksowe witryny</a></p>
+                    <p><a href="audyt.html">Darmowy audyt</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Social Media</h3>
+                    <p><a href="#">LinkedIn</a></p>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Instagram</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MLWeb. Wszystkie prawa zastrzeżone.</p>
+                <p><a href="#privacy">Polityka prywatności</a> | <a href="#terms">Regulamin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio-page.js"></script>
+</body>
+</html>
