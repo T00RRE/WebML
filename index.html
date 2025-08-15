@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLWeb - Szybkie strony dla twojego biznesu</title>
     <link rel="stylesheet" href="css/index.css">
+     <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe">
-            </div>
+                    <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
+                </div>
             <div class="nav-right">
                 <div class="language-switcher">
                     <span class="lang active" data-lang="pl">Pl</span>
@@ -30,10 +38,10 @@
                 <button class="close-menu" aria-label="Zamknij menu">✕</button>
                 <ul class="nav-links">
                     <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="realizacje.html">Portfolio</a></li>
                     <li><a href="uslugi.html">Usługi</a></li>
                     <li><a href="audyt.html">Audyt</a></li>
-                    <li><a href="realizacje.html">Portfolio</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -160,7 +168,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="#contact" class="cta-button">Zobacz więcej projektów</a>
+                <a href="realizacje.html" class="cta-button">Zobacz więcej projektów</a>
             </div>
         </div>
     </section>
@@ -170,22 +178,30 @@
         <div class="container">
             <h2>Usługi + Cennik</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>Darmowy Audyt</h3>
-                    <div class="free-badge">GRATIS</div>
-                    <p>Sprawdzamy twoją stronę pod kątem:</p>
-                    <ul style="text-align: left; margin: 1rem 0;">
-                        <li>PageSpeed Score</li>
-                        <li>Błędy W3C</li>
-                        <li>Responsywność mobile</li>
-                        <li>SEO podstawowe</li>
-                    </ul>
-                    <a href="#audit" class="cta-button">Zamów audyt</a>
+                <div class="service-card audit-card">
+                    <div class="audit-left">
+                        <h3>Darmowy Audyt</h3>
+                        <div class="free-badge">GRATIS</div>
+                    </div>
+                    
+                    <div class="audit-center">
+                        <p>Sprawdzamy twoją stronę pod kątem:</p>
+                        <ul>
+                            <li>PageSpeed Score</li>
+                            <li>Błędy W3C</li>
+                            <li>Responsywność mobile</li>
+                            <li>SEO podstawowe</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="audit-right">
+                        <a href="#audit" class="cta-button">Zamów audyt</a>
+                    </div>
                 </div>
                 
                 <div class="service-card">
                     <h3>Landing Page</h3>
-                    <div class="service-price">600 zł</div>
+                    <div class="service-price">500 zł</div>
                     <p>Szybka strona konwersyjna:</p>
                     <ul style="text-align: left; margin: 1rem 0;">
                         <li>PageSpeed 95+</li>
@@ -193,7 +209,7 @@
                         <li>Mobile responsive</li>
                         <li>Hosting na rok gratis</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Zamówię</a>
+                    <a href="contact.html" class="cta-button">Zamówię</a>
                 </div>
                 
                 <div class="service-card">
@@ -206,7 +222,7 @@
                         <li>SEO optimization</li>
                         <li>Analityka Google</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Zamówię</a>
+                    <a href="contact.html" class="cta-button">Zamówię</a>
                 </div>
                 
                 <div class="service-card">
@@ -219,7 +235,7 @@
                         <li>Formularz rezerwacji</li>
                         <li>Mapa i kontakt</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Zamówię</a>
+                    <a href="contact.html" class="cta-button">Zamówię</a>
                 </div>
             </div>
         </div>

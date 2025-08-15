@@ -42,6 +42,25 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* CLOSE MENU BUTTON */
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-menu:hover {
+    color: var(--sand-primary);
+    transform: rotate(90deg);
+}
 
 /* GLASS EFFECT UTILITY - usunięte zaokrąglenia */
 .glass {
@@ -520,6 +539,7 @@ nav {
 }
 
 .problem h2 {
+    margin-top: 50px;
     font-size: 3rem;
     margin-bottom: 2rem;
     color: var(--sand-accent);
@@ -774,10 +794,8 @@ nav {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    position: relative;
-    z-index: 2;
 }
 
 .service-card {
@@ -828,6 +846,101 @@ nav {
 
 .service-card ul li {
     margin: 0.5rem 0;
+}
+/* AUDIT CARD - rozciągnięta na całą szerokość */
+.service-card.audit-card {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    text-align: left;
+    padding: 2.5rem 3rem;
+}
+
+/* Lewa sekcja - tytuł i badge */
+.audit-card .audit-left {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.audit-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--sand-primary);
+}
+
+.audit-card .free-badge {
+    margin: 0;
+    padding: 8px 20px;
+    font-size: 1rem;
+}
+
+/* Środkowa sekcja - opis i lista */
+.audit-card .audit-center {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.audit-card .audit-center p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.audit-card ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+}
+
+.audit-card ul li {
+    color: var(--text-light);
+    opacity: 0.9;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.audit-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sand-primary);
+    font-weight: bold;
+}
+
+/* Prawa sekcja - CTA */
+.audit-card .audit-right {
+    flex: 0 0 auto;
+}
+
+.audit-card .cta-button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .audit-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .audit-card .audit-center {
+        padding: 0;
+    }
+    
+    .audit-card ul {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* AUDIT FORM */

@@ -7,14 +7,22 @@
     <meta name="description" content="Landing page, strony wielojęzyczne w 25 językach, kompleksowe witryny firmowe. PageSpeed 95+ gwarantowany. Współpraca z Aktru.">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/services-page.css">
+     <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe">
-            </div>
+                    <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
+                </div>
             <div class="nav-right">
                 <div class="language-switcher">
                     <span class="lang active" data-lang="pl">Pl</span>
@@ -32,10 +40,10 @@
                 <button class="close-menu" aria-label="Zamknij menu">✕</button>
                 <ul class="nav-links">
                     <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="uslugi.html">Usługi</a></li>
                     <li><a href="audyt.html">Audyt</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="realizacje.html">Portfolio</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,7 +51,11 @@
 
     <!-- HERO SECTION -->
     <section class="services-hero">
+        <div class="hero-background">
+            <img src="img/realizacje/Realizacje-hero-bg.webp" alt="Web development workspace" class="hero-bg-image">
+        </div>
         <div class="container">
+            
             <div class="hero-content">
                 <h1>Nasze Usługi</h1>
                 <p class="hero-subtitle">Od prostych landing page po kompleksowe strony wielojęzyczne</p>
@@ -149,13 +161,20 @@
                                 <p>Bezpieczeństwo i zaufanie</p>
                             </div>
                         </li>
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div>
+                                <strong>Wersje wielojęzyczne</strong>
+                                <p>Landing page w 25 językach na osobnych domenach i serwerach</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="service-pricing">
                     <div class="pricing-card">
                         <div class="price">
-                            <span class="currency">600</span>
+                            <span class="currency">500</span>
                             <span class="period">zł</span>
                         </div>
                         <p class="price-desc">Jednorazowa płatność</p>
@@ -175,7 +194,7 @@
                             </div>
                         </div>
                         
-                        <a href="#contact" class="service-cta">Zamawiam Landing Page</a>
+                        <a href="contact.html" class="service-cta">Zamawiam Landing Page</a>
                     </div>
                 </div>
             </div>
@@ -186,7 +205,7 @@
                     <div class="example-card">
                         <div class="example-icon">🏨</div>
                         <h4>Hotele & Noclegi</h4>
-                        <p>Prezentacja pokoi, lokalizacji i formularza rezerwacji</p>
+                        <p>Prezentacja pokoi, lokalizacji</p>
                     </div>
                     <div class="example-card">
                         <div class="example-icon">🔧</div>
@@ -196,7 +215,7 @@
                     <div class="example-card">
                         <div class="example-icon">🍕</div>
                         <h4>Restauracje</h4>
-                        <p>Menu, lokalizacja, zamówienia online</p>
+                        <p>Menu, lokalizacja</p>
                     </div>
                     <div class="example-card">
                         <div class="example-icon">💼</div>
@@ -358,14 +377,10 @@
                     <div class="feature-category">
                         <h3>📊 Funkcjonalność</h3>
                         <ul>
-                            <li>System zarządzania treścią (CMS)</li>
-                            <li>Panel administracyjny</li>
-                            <li>Blog z edytorem</li>
                             <li>Galerie zdjęć</li>
                             <li>Formularze kontaktowe</li>
                             <li>Newsletter</li>
                             <li>Mapy Google</li>
-                            <li>Chat online</li>
                         </ul>
                     </div>
                     
@@ -475,7 +490,7 @@
                         
                         <div class="support-info">
                             <h4>🛠️ Wsparcie techniczne</h4>
-                            <p>3 miesiące darmowego wsparcia, potem 200 zł/miesiąc</p>
+                            <p>1 rok darmowego wsparcia</p>
                         </div>
                         
                         <a href="#contact" class="service-cta">Omówmy Twój Projekt</a>
@@ -548,14 +563,14 @@
                 
                 <div class="comparison-row">
                     <div class="feature-name">Wsparcie</div>
-                    <div class="feature-value">1 miesiąc</div>
-                    <div class="feature-value">2 miesiące</div>
-                    <div class="feature-value">3 miesiące</div>
+                    <div class="feature-value">1 rok</div>
+                    <div class="feature-value">1 rok</div>
+                    <div class="feature-value">1 rok</div>
                 </div>
                 
                 <div class="comparison-row price-row">
                     <div class="feature-name">Cena od</div>
-                    <div class="feature-value price">600 zł</div>
+                    <div class="feature-value price">500 zł</div>
                     <div class="feature-value price">1500 zł</div>
                     <div class="feature-value price">3000 zł</div>
                 </div>

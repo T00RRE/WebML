@@ -1,4 +1,23 @@
 /* PORTFOLIO PAGE SPECIFIC STYLES */
+/* CLOSE MENU BUTTON */
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-menu:hover {
+    color: var(--sand-primary);
+    transform: rotate(90deg);
+}
 
 /* PORTFOLIO HERO */
 .portfolio-hero {

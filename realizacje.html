@@ -7,14 +7,22 @@
     <meta name="description" content="Portfolio MLWeb - nasze realizacje stron internetowych. PageSpeed 95+, responsywne design, case studies z Małopolski.">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/portflolio-page.css">
+     <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="Test-img/Logo.webp" alt="MLWeb - Szybkie strony internetowe">
-            </div>
+                    <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
+                </div>
             <div class="nav-right">
                 <div class="language-switcher">
                     <span class="lang active" data-lang="pl">Pl</span>
@@ -34,7 +42,7 @@
                     <li><a href="index.html">Strona główna</a></li>
                     <li><a href="uslugi.html">Usługi</a></li>
                     <li><a href="audyt.html">Audyt</a></li>
-                    <li><a href="#portfolio">Realizacje</a></li>
+                    <li><a href="realizacje.html">Realizacje</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </div>
@@ -131,26 +139,25 @@
                         <img src="img/realizacje/image 2-min.webp" alt="Restauracja Pizza Mama">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
-                                <h3>Pizza Mama</h3>
-                                <p class="portfolio-category">Restauracja</p>
+                                <h3>Uzdrowisko Kopalnia Soli "Wieliczka"</h3>
+                                <p class="portfolio-category">Hotel</p>
                                 <div class="portfolio-metrics">
-                                    <span class="metric">PageSpeed: 98/100</span>
-                                    <span class="metric">Mobile: 96/100</span>
+                                    <span class="metric">PageSpeed: 95/100</span>
                                     <span class="metric">Loading: 0.9s</span>
                                 </div>
                                 <p class="portfolio-description">
-                                    Landing page dla pizzerii z online menu i zamówieniami. 
-                                    Integracja z systemem POS, płatności BLIK i karta. 
-                                    Wzrost zamówień online o 120% w pierwszym kwartale.
+                                    Strona Uzdrowiska Kopalnia Soli Wieliczka prezentująca ofertę zabiegów, turnusów i diagnostyki
+                                    w unikalnych solnych komorach 135 m pod ziemią. 
                                 </p>
                                 <div class="portfolio-tech">
-                                    <span class="tech-tag">React</span>
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">PayU</span>
-                                    <span class="tech-tag">MongoDB</span>
+                                     <span class="tech-tag">Multi-lang</span>
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Google Analytics</span>
                                 </div>
                                 <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="https://wieliczka.polturizm.pl/" class="portfolio-link">Zobacz stronę</a>
                                     <a href="#" class="portfolio-link secondary">Case Study</a>
                                 </div>
                             </div>
@@ -167,20 +174,21 @@
                                 <h3>Aktru Partnership</h3>
                                 <p class="portfolio-category">Strony Wielojęzyczne</p>
                                 <div class="portfolio-metrics">
-                                    <span class="metric">Languages: 12</span>
-                                    <span class="metric">PageSpeed: 95/100</span>
-                                    <span class="metric">Countries: 8</span>
+                                    <span class="metric">Languages: 25</span>
+                                    <span class="metric">PageSpeed: 96/100</span>
+                                    <span class="metric">Countries: 25</span>
                                 </div>
-                                <p class="portfolio-description">
-                                    Seria projektów realizowanych wspólnie z firmą Aktru. 
-                                    Strony w 12 językach dla firm ekspandujących zagranicę. 
-                                    Native tłumaczenia + technical implementation.
-                                </p>
+                                    <p class="portfolio-description">
+                                        Strona firmy PM Serwis prezentująca ofertę wózków transportowych, podnośników hydraulicznych
+                                        oraz urządzeń do transportu przemysłowego. Multijęzyczny serwis z galerią realizacji, szczegółowymi
+                                        opisami produktów.
+                                    </p>
                                 <div class="portfolio-tech">
                                     <span class="tech-tag">Multi-lang</span>
-                                    <span class="tech-tag">i18n</span>
-                                    <span class="tech-tag">SEO</span>
-                                    <span class="tech-tag">Translations</span>
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Google Analytics</span>
                                 </div>
                                 <div class="portfolio-links">
                                     <a href="#" class="portfolio-link">Zobacz projekty</a>
@@ -191,73 +199,43 @@
                     </div>
                 </div>
 
-                <!-- MEBLE DESIGN SKLEP -->
-                <div class="portfolio-item" data-category="ecommerce">
-                    <div class="portfolio-image">
-                        <img src="img/realizacje/image 4-min.webp" alt="Sklep Meble Design">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Meble Design</h3>
-                                <p class="portfolio-category">E-commerce</p>
-                                <div class="portfolio-metrics">
-                                    <span class="metric">PageSpeed: 94/100</span>
-                                    <span class="metric">Products: 500+</span>
-                                    <span class="metric">Conversion: +78%</span>
-                                </div>
-                                <p class="portfolio-description">
-                                    Sklep internetowy z meblami na wymiar. 
-                                    Advanced product configurator, płatności online, 
-                                    integracja z magazynem. Wzrost sprzedaży o 200%.
-                                </p>
-                                <div class="portfolio-tech">
-                                    <span class="tech-tag">WooCommerce</span>
-                                    <span class="tech-tag">PayU</span>
-                                    <span class="tech-tag">InPost</span>
-                                    <span class="tech-tag">ERP</span>
-                                </div>
-                                <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Zobacz sklep</a>
-                                    <a href="#" class="portfolio-link secondary">Case Study</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RUSZTOWANIA MAX -->
+                <!-- Zamek Ryn -->
                 <div class="portfolio-item" data-category="business landing">
                     <div class="portfolio-image">
                         <img src="img/realizacje/image 5-min.webp" alt="Rusztowania MAX">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
-                                <h3>Rusztowania MAX</h3>
-                                <p class="portfolio-category">Firma Budowlana</p>
+                                <h3>Zamek Ryn</h3>
+                                <p class="portfolio-category">Hotel</p>
                                 <div class="portfolio-metrics">
-                                    <span class="metric">PageSpeed: 99/100</span>
-                                    <span class="metric">Mobile: 98/100</span>
+                                    <span class="metric">PageSpeed: 95/100</span>
                                     <span class="metric">Loading: 0.8s</span>
                                 </div>
                                 <p class="portfolio-description">
-                                    Landing page B2B dla producenta rusztowań. 
-                                    Formularz wyceny online, galeria realizacji, 
-                                    certyfikaty. Wzrost zapytań o 150%.
+                                    Strona Hotelu Zamek Ryn **** — 
+                                    zabytkowego zamku z ofertą noclegów, restauracji i
+                                    centrum SPA, położonego malowniczo pośród mazurskich jezior. 
+                                    Prezentacja stylowych komnat, gastronomii w klimatycznych salach,
+                                        winiarni oraz rekreacji z basenem, sauną i hydromasażem. Opis możliwości 
+                                        organizacji wydarzeń i imprez historycznych, konferencji, biesiad rycerskich 
+                                        oraz integracji firmowych.
                                 </p>
                                 <div class="portfolio-tech">
                                     <span class="tech-tag">Landing Page</span>
-                                    <span class="tech-tag">B2B</span>
-                                    <span class="tech-tag">Forms</span>
-                                    <span class="tech-tag">SEO</span>
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Google Analytics</span>
                                 </div>
                                 <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
-                                    <a href="#" class="portfolio-link secondary">Case Study</a>
+                                    <a href="https://zamekryn.polturizm.pl/" class="portfolio-link">Zobacz stronę</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- KLINIKA ZDROWIA -->
+                <!-- Super Derm -->
                 <div class="portfolio-item" data-category="business">
                     <div class="portfolio-image">
                         <img src="img/realizacje/image 6-min.webp" alt="Klinika Zdrowia">
@@ -267,14 +245,10 @@
                                 <p class="portfolio-category">Medycyna</p>
                                 <div class="portfolio-metrics">
                                     <span class="metric">PageSpeed: 97/100</span>
-                                    <span class="metric">GDPR: 100%</span>
-                                    <span class="metric">Appointments: +60%</span>
                                 </div>
-                                <p class="portfolio-description">
-                                    Strona dla prywatnej kliniki z systemem umawiania wizyt. 
-                                    GDPR compliance, integracja z kalendarzem lekarzy, 
-                                    telemedycyna. Wzrost pacjentów o 60%.
-                                </p>
+                               <p class="portfolio-description">
+                                    Strona hurtowni estetycznej SuperDerm – specjalizującej się w zaopatrzeniu gabinetów w wypełniacze kwasu hialuronowego, nici PDO i PLLA, mezoterapię igłową oraz akcesoria medyczne. Prezentacja szerokiego asortymentu produktów, szkoleń oraz bezpośredniej współpracy z producentami. Multijęzyczny interfejs i szybka realizacja zamówień – przesyłki wysyłane tego samego dnia przy zamówieniach złożonych do godziny 14:00.
+                                    </p>
                                 <div class="portfolio-tech">
                                     <span class="tech-tag">Medical</span>
                                     <span class="tech-tag">GDPR</span>
@@ -282,7 +256,7 @@
                                     <span class="tech-tag">Security</span>
                                 </div>
                                 <div class="portfolio-links">
-                                    <a href="#" class="portfolio-link">Zobacz stronę</a>
+                                    <a href="https://superderm.polfirms.pl/" class="portfolio-link">Zobacz stronę</a>
                                     <a href="#" class="portfolio-link secondary">Case Study</a>
                                 </div>
                             </div>
