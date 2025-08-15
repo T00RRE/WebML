@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLWeb - Szybkie strony dla twojego biznesu</title>
+    <title>WebMl - Szybkie strony dla twojego biznesu</title>
+    <meta name="description" content="WebMl — szybkie i responsywne strony dla firm w Małopolsce. PageSpeed 95+, SEO, darmowy audyt i szybka realizacja. Skontaktuj się już dziś.">
     <link rel="stylesheet" href="css/index.css">
-     <!-- Favicons -->
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebDevelopmentCompany",
+        "name": "WebMl",
+        "url": "https://WebMl.pl",
+        "logo": "https://WebMl.pl/img/logo.webp",
+        "description": "Profesjonalne tworzenie szybkich stron internetowych dla firm w Małopolsce",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Małopolska",
+            "addressCountry": "PL"
+        },
+        "telephone": "+48123456789",
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "priceRange": "500-5000 PLN",
+        "sameAs": [
+            "https://facebook.com/WebMl",
+            "https://linkedin.com/company/WebMl"
+        ]
+    }
+    </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D56ZPXRLF9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D56ZPXRLF9');
+</script>
 </head>
 <body>
     <!-- HEADER -->
-    <header>
+    <header class="parallax-header">
         <nav class="container">
             <div class="logo">
-                    <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
-                </div>
+                <a href="index.html#top"><img src="Test-img/Logo.webp" width="80px" alt="WebMl - Szybkie strony internetowe"></a>
+            </div>
             <div class="nav-right">
                 <div class="language-switcher">
                     <span class="lang active" data-lang="pl">Pl</span>
@@ -37,11 +72,11 @@
             <div class="nav-overlay">
                 <button class="close-menu" aria-label="Zamknij menu">✕</button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="realizacje.html">Portfolio</a></li>
-                    <li><a href="uslugi.html">Usługi</a></li>
-                    <li><a href="audyt.html">Audyt</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="index.html" class="smooth-scroll">Strona główna</a></li>
+                    <li><a href="realizacje.html" class="smooth-scroll">Portfolio</a></li>
+                    <li><a href="uslugi.html" class="smooth-scroll">Usługi</a></li>
+                    <li><a href="audyt.html" class="smooth-scroll">Audyt</a></li>
+                    <li><a href="contact.html" class="smooth-scroll">Kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -51,7 +86,6 @@
     <section class="hero">
         <div class="hero-background">
             
-            <img src="hero-bg.jpg" alt="Web development workspace" class="hero-bg-image">
                 <img src="img/realizacje/Realizacje-hero-bg.webp" alt="Portfolio background" class="hero-bg-image">
 
             <div class="hero-overlay"></div>
@@ -59,12 +93,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>MLWeb - szybkie strony dla twojego biznesu</h1>
+                    <h1>WebMl - szybkie strony dla twojego biznesu</h1>
                     <h2>Profesjonalne strony dla firm w Małopolsce</h2>
                     <a href="#audit" class="cta-button">Darmowy audyt strony</a>
                 </div>
                 <div class="hero-image">
-                    <img src="Test-img/Hero-Baner.jpeg" alt="Web developer creating fast websites" class="developer-image">
+                    <img src="Test-img/Hero-Baner.webp" alt="Web developer creating fast websites" class="developer-image">
                     <div class="floating-metrics">
                         <div class="metric-card">
                             <span class="metric-number">95+</span>
@@ -209,7 +243,7 @@
                         <li>Mobile responsive</li>
                         <li>Hosting na rok gratis</li>
                     </ul>
-                    <a href="contact.html" class="cta-button">Zamówię</a>
+                    <a href="contact.html?service=landing" class="cta-button">Zamówię</a>
                 </div>
                 
                 <div class="service-card">
@@ -222,7 +256,7 @@
                         <li>SEO optimization</li>
                         <li>Analityka Google</li>
                     </ul>
-                    <a href="contact.html" class="cta-button">Zamówię</a>
+                    <a href="contact.html?service=firmowa" class="cta-button">Zamówię</a>
                 </div>
                 
                 <div class="service-card">
@@ -235,7 +269,7 @@
                         <li>Formularz rezerwacji</li>
                         <li>Mapa i kontakt</li>
                     </ul>
-                    <a href="contact.html" class="cta-button">Zamówię</a>
+                    <a href="contact.html?service=hotel" class="cta-button">Zamówię</a>
                 </div>
             </div>
         </div>
@@ -248,7 +282,7 @@
             <p style="margin-bottom: 2rem;">Otrzymasz szczegółowy raport w 24h</p>
             
             <div class="form-container">
-                <form>
+                <form id="audit-form">
                     <div class="form-group">
                         <label for="url">URL strony *</label>
                         <input type="url" id="url" name="url" placeholder="https://twoja-strona.pl" required>
@@ -288,14 +322,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MLWeb</h3>
+                    <h3>WebMl</h3>
                     <p>Szybkie strony dla firm w Małopolsce</p>
                     <p>PageSpeed 95+ gwarantowany</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Kontakt</h3>
-                    <p>📧 kontakt@mlweb.pl</p>
+                    <p>📧 kontakt@WebMl.pl</p>
                     <p>📱 +48 123 456 789</p>
                     <p>📍 Małopolska, Polska</p>
                 </div>
@@ -317,11 +351,14 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 MLWeb. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2025 WebMl. Wszystkie prawa zastrzeżone.</p>
                 <p><a href="#">Polityka prywatności</a> | <a href="#">Regulamin</a></p>
             </div>
         </div>
     </footer>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/parallax.js"></script>
     <script src="js/main.js"></script>
+    
 </body>
 </html>

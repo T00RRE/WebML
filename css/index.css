@@ -36,7 +36,11 @@ body {
     background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 50%, var(--dark-tertiary) 100%);
     min-height: 100vh;
 }
+/* ustawienia dla nagłówków wewnątrz elementów sekcjonujących */
 
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem); /* responsywny, bez niespodzianek */
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,6 +64,11 @@ body {
 .close-menu:hover {
     color: var(--sand-primary);
     transform: rotate(90deg);
+}
+
+/* Ukryj przycisk .close-menu gdy menu jest otwarte (uniknięcie podwójnego przycisku) */
+body.menu-open .close-menu {
+    display: none;
 }
 
 /* GLASS EFFECT UTILITY - usunięte zaokrąglenia */
@@ -110,7 +119,8 @@ header {
     top: 0;
     z-index: 1000;
     background: transparent;
-    padding: 2rem 0;
+    padding: 0.5rem 0; /* Zmniejszone z 2rem */
+    transition: all 0.3s ease;
 }
 
 nav {
@@ -128,7 +138,7 @@ nav {
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
     width: auto;
     transition: all 0.3s ease;
     filter: brightness(1);
@@ -143,7 +153,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-light);
 }
@@ -184,9 +194,9 @@ nav {
 
 .menu-text {
     color: var(--text-light);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-right: 1rem;
+    margin-right: 0.9rem;
     opacity: 0.9;
 }
 
@@ -194,22 +204,24 @@ nav {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    padding: 0;
-    background: transparent;
+    padding: 0.5rem; /* Zwiększ padding dla lepszej klikalności */
+    z-index: 1001; /* Upewnij się, że jest nad overlayem */
+    background: none;
     border: none;
 }
 
 .hamburger span {
-    width: 24px;
+    width: 24px; /* Przywróć oryginalną szerokość */
     height: 2px;
     background: var(--text-light);
-    margin: 3px 0;
+    margin: 4px 0; /* Zwiększ margines między liniami */
     transition: all 0.3s ease;
     border-radius: 1px;
+    display: block; /* Upewnij się, że są blokami */
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(5px, 5px); /* Dostosuj transformację */
 }
 
 .hamburger.active span:nth-child(2) {
@@ -217,7 +229,7 @@ nav {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px); /* Dostosuj transformację */
 }
 
 .nav-overlay {
@@ -282,7 +294,10 @@ nav {
     color: var(--sand-primary);
     transform: translateX(10px);
 }
-
+.nav-links a.active {
+    color: var(--sand-primary);
+    border-bottom: 2px solid var(--sand-primary);
+}
 /* HERO SECTION */
 .hero {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
@@ -470,6 +485,7 @@ nav {
     border-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    
 }
 
 .cta-button:hover {
@@ -1142,7 +1158,12 @@ footer {
 .animate-on-scroll {
     animation: fadeInUp 0.8s ease-out;
 }
-
+.parallax-header.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.3rem 0; /* Zmniejszone z 1rem */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Lżejszy cień */
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .nav-right {
@@ -1304,4 +1325,148 @@ footer {
 ::-moz-selection {
     background: var(--sand-primary);
     color: var(--dark-primary);
+}
+/* Responsive adjustments for animations */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .section-fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    .card-animate:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-attachment: scroll !important;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        padding: 0.3rem 0;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .nav-right {
+        gap: 0.5rem;
+    }
+    
+    .menu-text {
+        display: none; /* Możesz ukryć na małych ekranach */
+    }
+    
+    .hamburger {
+        padding: 0.3rem;
+    }
+}
+/* hero-mobile.css - Improved mobile Hero section */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 40px;
+    min-height: auto;
+    overflow: hidden; /* Zapobiega wychodzeniu elementów poza ekran */
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 0 15px; /* Dodatkowe zabezpieczenie */
+  }
+
+  .hero-image {
+    order: -1;
+    margin: 0 auto; /* Centrowanie */
+    max-width: 100%; /* Nigdy nie wychodzi poza kontener */
+    padding: 0 15px; /* Marginesy boczne */
+    box-sizing: border-box;
+  }
+
+  .developer-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto; /* Centrowanie obrazu */
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 2.2rem); /* Płynne skalowanie czcionki */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    word-wrap: break-word; /* Zapobiega wychodzeniu tekstu */
+  }
+
+  .hero h2 {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .floating-metrics {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Zawijanie na małych ekranach */
+    gap: 0.8rem;
+    margin: 1.5rem auto 0;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .metric-card {
+    padding: 0.7rem;
+    min-width: 60px;
+    flex: 1 0 calc(33% - 1rem); /* 3 kolumny z odstępami */
+    max-width: calc(33% - 1rem);
+  }
+
+  .hero-background,
+  .hero-overlay {
+    width: 100vw; /* Pełna szerokość viewport */
+    left: 50%;
+    margin-left: -50vw; /* Centrowanie tła */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 0 30px;
+  }
+  
+  .developer-image {
+    max-width: 240px;
+  }
+  
+  .metric-card {
+    flex: 1 0 calc(50% - 0.5rem); /* 2 kolumny na bardzo małych ekranach */
+    max-width: calc(50% - 0.5rem);
+    padding: 0.5rem;
+  }
+  
+  .metric-number {
+    font-size: 1rem;
+  }
+  
+  .metric-label {
+    font-size: 0.30rem;
+  }
 }

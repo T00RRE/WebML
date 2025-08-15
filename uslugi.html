@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usługi - Szybkie Strony Internetowe | MLWeb</title>
@@ -15,14 +16,23 @@
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
     <link rel="manifest" href="site.webmanifest">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D56ZPXRLF9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D56ZPXRLF9');
+</script>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
+     <!-- HEADER -->
+    <header class="parallax-header">
         <nav class="container">
             <div class="logo">
-                    <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
-                </div>
+                <a href="index.html"><img src="Test-img/Logo.webp" width="80px" alt="MLWeb - Szybkie strony internetowe"></a>
+            </div>
             <div class="nav-right">
                 <div class="language-switcher">
                     <span class="lang active" data-lang="pl">Pl</span>
@@ -39,11 +49,11 @@
             <div class="nav-overlay">
                 <button class="close-menu" aria-label="Zamknij menu">✕</button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="uslugi.html">Usługi</a></li>
-                    <li><a href="audyt.html">Audyt</a></li>
-                    <li><a href="realizacje.html">Portfolio</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="index.html" class="smooth-scroll">Strona główna</a></li>
+                    <li><a href="realizacje.html" class="smooth-scroll">Portfolio</a></li>
+                    <li><a href="uslugi.html" class="smooth-scroll">Usługi</a></li>
+                    <li><a href="audyt.html" class="smooth-scroll">Audyt</a></li>
+                    <li><a href="contact.html" class="smooth-scroll">Kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -626,12 +636,14 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 MLWeb. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2025 WebMl. Wszystkie prawa zastrzeżone.</p>
                 <p><a href="#privacy">Polityka prywatności</a> | <a href="#terms">Regulamin</a></p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+        <script src="js/smooth-scroll.js"></script>
+    <script src="js/parallax.js"></script>
 </body>
 </html>

@@ -2,58 +2,117 @@
 const hamburger = document.querySelector('.hamburger');
 const navOverlay = document.querySelector('.nav-overlay');
 const closeMenuBtn = document.querySelector('.close-menu');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinksMain = document.querySelectorAll('.nav-links a');
 const langSwitchers = document.querySelectorAll('.lang');
 const auditForm = document.querySelector('#audit-form');
 
-// Mobile menu toggle
-function toggleMenu() {
-    hamburger.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-    document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
+console.log('Hamburger:', hamburger);
+console.log('Nav overlay:', navOverlay);
+console.log('Close button:', closeMenuBtn);
+console.log('Nav links:', navLinksMain);
+
+// Safety: ensure hamburger and overlay stacking and pointer events so clicks reach the hamburger
+if (hamburger) {
+    try {
+        hamburger.style.zIndex = '10002';
+        hamburger.style.pointerEvents = 'auto';
+    } catch (err) {
+        console.warn('Could not set hamburger inline styles', err);
+    }
+}
+if (navOverlay) {
+    try {
+        // ensure overlay is below hamburger but above content
+        navOverlay.style.zIndex = '10000';
+    } catch (err) {
+        console.warn('Could not set navOverlay inline styles', err);
+    }
 }
 
-// Close menu
+// Mobile menu toggle - ZAKTUALIZOWANA FUNKCJA
+function toggleMenu() {
+    console.log('toggleMenu called. Before toggle - hamburger active?', hamburger && hamburger.classList.contains('active'), 'navOverlay active?', navOverlay && navOverlay.classList.contains('active'));
+    hamburger.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    // Toggle body class to prevent scrolling and allow CSS rules (e.g. hide hamburger)
+    document.body.classList.toggle('menu-open');
+    console.log('toggleMenu finished. After toggle - hamburger active?', hamburger && hamburger.classList.contains('active'), 'navOverlay active?', navOverlay && navOverlay.classList.contains('active'));
+    
+    // Lepsza obsługa blokady scrolla
+    if (navOverlay.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+    }
+}
+
+// Close menu - ZAKTUALIZOWANA FUNKCJA
 function closeMenu() {
     hamburger.classList.remove('active');
     navOverlay.classList.remove('active');
+    // Ensure body class is removed
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
 }
 
-// Event Listeners
+// Event Listeners - ZAKTUALIZOWANE
 if (hamburger) {
-    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', function(e) {
+        console.log('hamburger clicked, event target:', e.target, 'this:', this);
+        e.stopPropagation(); // Zapobiega bąbelkowaniu
+        toggleMenu();
+    });
+    console.log('hamburger click handler attached');
+} else {
+    console.warn('Hamburger element not found when attaching click handler');
 }
 
 if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', closeMenu);
+    closeMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
+    });
 }
 
-// Close menu when clicking on nav links
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+// Close menu when clicking on nav links - ZAKTUALIZOWANE
+navLinksMain.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Najpierw zamknij menu
         closeMenu();
         
-        // Smooth scroll to target
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
+        // Potem obsłuż scroll
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
             e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            const target = document.querySelector(targetId);
+            if (target) {
+                setTimeout(() => { // Małe opóźnienie dla płynności
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 300);
+            }
         }
     });
 });
 
-// Close menu when clicking outside
-navOverlay.addEventListener('click', (e) => {
-    if (e.target === navOverlay) {
+// Close menu when clicking outside - ZAKTUALIZOWANE
+document.addEventListener('click', function(e) {
+    if (navOverlay.classList.contains('active') && 
+        !e.target.closest('.nav-overlay') && 
+        !e.target.closest('.hamburger')) {
         closeMenu();
     }
 });
 
-// Close menu with Escape key
+// Close menu with Escape key - BEZ ZMIAN (działa dobrze)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navOverlay.classList.contains('active')) {
         closeMenu();
@@ -132,6 +191,10 @@ if (auditForm) {
             
         }, 2000);
     });
+console.log('Language initialized');
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav overlay element:', navOverlay);
+    console.log('Close button element:', closeMenuBtn);
 }
 
 // Notification system
@@ -291,6 +354,20 @@ function copyToClipboard(text) {
         showNotification('Skopiowano do schowka!', 'success');
     }).catch(() => {
         showNotification('Nie udało się skopiować', 'error');
+    });
+}
+
+// Header scroll effect
+function handleHeaderScroll() {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    // Ustaw stan początkowy
+    header.classList.toggle('scrolled', window.scrollY > 100);
+
+    // Nasłuchiwanie scrolla, używamy toggle z warunkiem dla wydajności
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 100);
     });
 }
 
