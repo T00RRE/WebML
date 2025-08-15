@@ -7,7 +7,6 @@
     <title>WebMl - Szybkie strony dla twojego biznesu</title>
     <meta name="description" content="WebMl — szybkie i responsywne strony dla firm w Małopolsce. PageSpeed 95+, SEO, darmowy audyt i szybka realizacja. Skontaktuj się już dziś.">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/animations.css">
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -39,6 +38,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D56ZPXRLF9"></script>
 <script>
@@ -98,7 +98,7 @@
                     <a href="#audit" class="cta-button">Darmowy audyt strony</a>
                 </div>
                 <div class="hero-image">
-                    <img src="Test-img/Hero-Baner.webp" alt="Web developer creating fast websites" class="developer-image">
+                    <img src="Test-img/Hero-Baner.webp" alt="Web developer creating fast websites" class="developer-image" fetchpriority="high">
                     <div class="floating-metrics">
                         <div class="metric-card">
                             <span class="metric-number">95+</span>
@@ -356,9 +356,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/parallax.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/smooth-scroll.js" defer></script>
+    <script src="js/parallax.js" defer></script>
+    <script src="js/main.js" defer></script>
     
 </body>
 </html>

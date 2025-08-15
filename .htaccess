@@ -1,0 +1,146 @@
+# WebMl - .htaccess Configuration
+# Optymalizacja dla szybkich stron internetowych
+
+# Włącz mod_rewrite
+RewriteEngine On
+
+# Security Headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# HTTPS Redirect
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# WWW Redirect (opcjonalnie - usuń jeśli nie używasz www)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Sitemap.xml
+RewriteRule ^sitemap\.xml$ /sitemap.xml [L]
+RewriteRule ^sitemap_index\.xml$ /sitemap_index.xml [L]
+
+# Cache Control dla różnych typów plików
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Obrazy - cache na rok
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS i JavaScript - cache na miesiąc
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # Fonty - cache na rok
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML - cache na godzinę
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Inne pliki
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+</IfModule>
+
+# Gzip Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Cache Headers
+<IfModule mod_headers.c>
+    # Cache obrazy WebP i inne na rok
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|ico|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache CSS i JS na miesiąc
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    # Cache fonty na rok
+    <FilesMatch "\.(woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # HTML bez cache (dla aktualności)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>
+
+# WebP Support - automatyczne serwowanie WebP dla obsługujących przeglądarek
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} \.(jpe?g|png)$
+    RewriteCond %{REQUEST_FILENAME}.webp -f
+    RewriteRule ^(.+)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,E=accept:1,L]
+</IfModule>
+
+# Dodaj poprawny MIME type dla WebP
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+</IfModule>
+
+# ETags dla lepszego cachowania
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Blokowanie dostępu do wrażliwych plików
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Blokowanie dostępu do katalogu wp-config i podobnych
+<Files "*.log">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# URL Rewriting dla czystych URL-i (opcjonalne)
+# Usuń .html z URL-i
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.html [NC,L]
+
+# Error Pages (opcjonalne)
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Prevent hotlinking obrazów
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?webml\.pl [NC]
+RewriteCond %{REQUEST_FILENAME} \.(jpe?g|png|gif|webp)$ [NC]
+RewriteRule \.(jpe?g|png|gif|webp)$ - [F]

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.webml.pl/</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/index</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/realizacje</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/uslugi</loc>
+  <lastmod>2025-08-15T22:32:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/audyt</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/contact</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/contact?service=landing</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/contact?service=firmowa</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.webml.pl/contact?service=hotel</loc>
+  <lastmod>2025-08-15T22:32:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
