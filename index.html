@@ -1,21 +1,370 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebMl - Szybkie strony dla twojego biznesu</title>
     <meta name="description" content="WebMl — szybkie i responsywne strony dla firm w Małopolsce. PageSpeed 95+, SEO, darmowy audyt i szybka realizacja. Skontaktuj się już dziś.">
-    <link rel="stylesheet" href="css/index.css">
+    
+    <!-- KLUCZOWA OPTYMALIZACJA 1: Preload kluczowych zasobów -->
+    <link rel="preload" href="css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/index.css"></noscript>
+    
+    <!-- KLUCZOWA OPTYMALIZACJA 2: Self-hosted fonts zamiast Google Fonts -->
+    <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- KLUCZOWA OPTYMALIZACJA 3: Preload hero image -->
+    <link rel="preload" href="Test-img/Hero-Baner.webp" as="image">
+    
+    <!-- OPTYMALIZACJA 4: DNS prefetch dla zewnętrznych zasobów -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <!-- Structured Data -->
+    
+    <!-- CRITICAL CSS - NAPRAWIONE DLA CLS -->
+    <style>
+    /* =================================
+       FIX #1: Font metrics fallback
+       ================================= */
+    @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/poppins-400.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        /* Dodaj font metrics */
+        ascent-override: 95%;
+        descent-override: 25%;
+        line-gap-override: 0%;
+    }
+    
+    :root {
+        --sand-primary: #B5956A;
+        --sand-dark: #9A7F5A;
+        --sand-light: #C4A572;
+        --dark-primary: #0a0a0a;
+        --dark-secondary: #1a1a1a;
+        --text-light: #F0F0F0;
+        
+        /* FIX #2: Stałe wysokości dla elementów */
+        --header-height: 60px;
+        --header-height-scrolled: 60px; /* Taka sama! */
+        --logo-height: 40px;
+        --hero-min-height: 100vh;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* FIX #3: Lepszy font fallback */
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        /* Arial ma podobne metryki do Poppins */
+        font-size-adjust: 0.545;
+        line-height: 1.6;
+        color: var(--text-light);
+        background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-secondary) 100%);
+        /* Zapobiegaj horizontal scroll */
+        overflow-x: hidden;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* FIX #4: Header ze stałą wysokością */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background: transparent;
+        height: var(--header-height); /* Stała wysokość! */
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        /* NIE zmieniaj padding/height przy scroll */
+    }
+    
+    /* Scrolled state - tylko tło się zmienia */
+    header.scrolled {
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        /* BEZ zmiany wysokości! */
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* FIX #5: Logo z wymiarami */
+    .logo {
+        display: flex;
+        align-items: center;
+        height: var(--logo-height);
+    }
+    
+    .logo img {
+        width: 80px;
+        height: 40px;
+        object-fit: contain;
+        display: block;
+    }
+    
+    /* FIX #6: Hero z rezerved space */
+    .hero {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+        padding-top: calc(var(--header-height) + 80px);
+        padding-bottom: 100px;
+        min-height: var(--hero-min-height);
+        display: flex;
+        align-items: center;
+        position: relative;
+        /* Contain layout shifts */
+        contain: layout style;
+    }
+    
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        /* Prevent reflow */
+        will-change: transform;
+    }
+    
+    .hero-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.15;
+        filter: grayscale(100%) blur(1px);
+    }
+    
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+    
+    /* FIX #7: Developer image z aspect ratio */
+    .hero-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .developer-image {
+        width: 100%;
+        max-width: 500px;
+        /* KLUCZOWE: aspect-ratio zapobiega CLS */
+        aspect-ratio: 500 / 375;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(181, 149, 106, 0.3);
+        object-fit: cover;
+        display: block;
+    }
+    
+    /* FIX #8: Floating metrics - reserved space */
+    .floating-metrics {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 4;
+        /* Reserve minimum space */
+        min-width: 120px;
+        min-height: 280px;
+    }
+    
+    .metric-card {
+        background: rgba(181, 149, 106, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(181, 149, 106, 0.3);
+        min-width: 100px;
+        /* FIX: Contain animations */
+        contain: layout;
+        will-change: transform;
+        /* Animacja tylko na GPU */
+        transform: translateZ(0);
+    }
+    
+    /* FIX #9: Animacje bez layout shift */
+    @keyframes floatOptimized {
+        0%, 100% {
+            transform: translate3d(0, 0, 0);
+        }
+        50% {
+            transform: translate3d(0, -10px, 0);
+        }
+    }
+    
+    .metric-card {
+        animation: floatOptimized 3s ease-in-out infinite;
+    }
+    
+    .metric-card:nth-child(2) {
+        animation-delay: 1s;
+    }
+    
+    .metric-card:nth-child(3) {
+        animation-delay: 2s;
+    }
+    
+    /* FIX #10: Typography bez shift */
+    .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1.5rem;
+        color: var(--text-light);
+        font-weight: 800;
+        line-height: 1.1;
+        /* Prevent text wrap changes */
+        overflow-wrap: break-word;
+    }
+    
+    .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        margin-bottom: 3rem;
+        color: var(--sand-light);
+        font-weight: 400;
+        opacity: 0.9;
+        line-height: 1.4;
+    }
+    
+    /* CTA Button */
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--sand-primary) 0%, var(--sand-dark) 100%);
+        color: var(--dark-primary);
+        padding: 18px 40px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Prevent layout shift on hover */
+        will-change: transform;
+        transform: translateZ(0);
+    }
+    
+    .cta-button:hover {
+        transform: translate3d(0, -3px, 0);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* FIX #11: Nav overlay optimized */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        transform: translateY(-100%);
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+        /* Prevent reflow */
+        contain: layout style;
+    }
+    
+    .nav-overlay.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* FIX #12: Problem section images */
+    .problem-point h3::before,
+    .benefit h3::before {
+        content: '';
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+        :root {
+            --header-height: 56px;
+            --header-height-scrolled: 56px;
+            --logo-height: 35px;
+        }
+        
+        .hero {
+            padding-top: calc(var(--header-height) + 40px);
+        }
+        
+        .hero-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .hero-image {
+            order: -1;
+        }
+        
+        .developer-image {
+            max-width: 350px;
+            aspect-ratio: 4 / 3;
+        }
+        
+        .floating-metrics {
+            position: relative;
+            top: auto;
+            right: auto;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: auto;
+            margin-top: 1.5rem;
+        }
+        
+        .metric-card {
+            animation: none; /* Disable animation on mobile */
+        }
+    }
+    
+    /* Font loading state */
+    .fonts-loaded body {
+        font-family: 'Poppins', Arial, sans-serif;
+    }
+    </style>
+
+    
+    <!-- OPTYMALIZACJA 6: Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -23,31 +372,26 @@
         "name": "WebMl",
         "url": "https://WebMl.pl",
         "logo": "https://WebMl.pl/img/logo.webp",
-        "description": "Profesjonalne tworzenie szybkich stron internetowych dla firm w Małopolsce",
-        "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "Małopolska",
-            "addressCountry": "PL"
-        },
-        "telephone": "+48123456789",
-        "openingHours": "Mo-Fr 09:00-17:00",
-        "priceRange": "500-5000 PLN",
-        "sameAs": [
-            "https://facebook.com/WebMl",
-            "https://linkedin.com/company/WebMl"
-        ]
+        "description": "Profesjonalne tworzenie szybkich stron internetowych dla firm w Małopolsce"
     }
     </script>
-    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D56ZPXRLF9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D56ZPXRLF9');
-</script>
+    
+    <!-- OPTYMALIZACJA 7: Font loading strategy -->
+    <script>
+    // Font loading strategy - ładujemy fonty asynchronicznie
+    if ('fontDisplay' in document.documentElement.style) {
+        const fontPromises = [
+            new FontFace('Poppins', 'url(fonts/poppins-400.woff2)', { weight: '400', display: 'swap' }).load(),
+            new FontFace('Poppins', 'url(fonts/poppins-600.woff2)', { weight: '600', display: 'swap' }).load(),
+            new FontFace('Poppins', 'url(fonts/poppins-700.woff2)', { weight: '700', display: 'swap' }).load()
+        ];
+        
+        Promise.all(fontPromises).then(fonts => {
+            fonts.forEach(font => document.fonts.add(font));
+            document.documentElement.classList.add('font-loaded');
+        });
+    }
+    </script>
 </head>
 <body>
     <!-- HEADER -->
@@ -82,12 +426,13 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
+     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-background">
-            
-                <img src="img/realizacje/Realizacje-hero-bg.webp" alt="Portfolio background" class="hero-bg-image">
-
+            <img src="img/realizacje/Realizacje-hero-bg.webp" 
+                 alt="Portfolio background" 
+                 class="hero-bg-image"
+                 loading="eager">
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
@@ -95,10 +440,19 @@
                 <div class="hero-text">
                     <h1>WebMl - szybkie strony dla twojego biznesu</h1>
                     <h2>Profesjonalne strony dla firm w Małopolsce</h2>
-                    <a href="#audit" class="cta-button">Darmowy audyt strony</a>
+                    <a href="#audit" class="cta-button">
+                        <span>Darmowy audyt strony</span>
+                    </a>
                 </div>
                 <div class="hero-image">
-                    <img src="Test-img/Hero-Baner.webp" alt="Web developer creating fast websites" class="developer-image" fetchpriority="high">
+                    <!-- FIX: Wymiary i loading eager -->
+                    <img src="Test-img/Hero-Baner.webp" 
+                         alt="Web developer creating fast websites" 
+                         class="developer-image"
+                         width="500"
+                         height="375"
+                         loading="eager"
+                         fetchpriority="high">
                     <div class="floating-metrics">
                         <div class="metric-card">
                             <span class="metric-number">95+</span>
@@ -356,9 +710,56 @@
             </div>
         </div>
     </footer>
-    <script src="js/smooth-scroll.js" defer></script>
-    <script src="js/parallax.js" defer></script>
-    <script src="js/main.js" defer></script>
+<script>
+// Załaduj animations.css DOPIERO po załadowaniu strony
+window.addEventListener('load', function() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/animations.css';
+    document.head.appendChild(link);
+});
+</script>
+<script>
+    // Lazy load non-critical CSS
+    function loadCSS(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    }
     
+    // Load non-critical CSS after page load
+    window.addEventListener('load', () => {
+        loadCSS('css/animations.css');
+    });
+    
+    // OPTYMALIZACJA 10: Intersection Observer dla lazy loading
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
+    
+    <!-- Google Analytics - async -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D56ZPXRLF9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D56ZPXRLF9');
+    </script>
+    
+    <!-- Load remaining scripts after critical content -->
+    <script defer src="js/main.js"></script>
 </body>
+
 </html>

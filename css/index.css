@@ -1,5 +1,25 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* Self-hosted Poppins fonts (WOFF2). Umieść pliki w /fonts: poppins-400.woff2, poppins-600.woff2, poppins-700.woff2 */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
     margin: 0;
@@ -1190,7 +1210,11 @@ footer {
         right: auto;
         flex-direction: row;
         justify-content: center;
-        margin-top: 2rem;
+        flex-wrap: wrap; /* Zawijanie na małych ekranach */
+        gap: 0.8rem;
+        margin: 1.5rem auto 0;
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .developer-image {
